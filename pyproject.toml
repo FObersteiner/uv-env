@@ -1,0 +1,22 @@
+[project]
+name = "uv-env"
+version = "0.1.0"
+description = "uv python playground"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+  "ipython>=8.31.0",
+  "pandas>=2.2.3",
+  "polars>=1.18.0",
+  "pydantic>=2.10.4",
+  "pyfuppes>=0.5.1",
+  "spyder>=6.0.3",
+]
+
+[tool.uv.sources]
+pyfuppes = [{ path = "../pyFuppes", editable = true }]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
