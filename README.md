@@ -53,17 +53,17 @@ Those texts made me rethink my Python workflow...
 
 - I run Python scripts almost daily and do Python package development
     now and then
-- I'm using `pyenv` on Linux
+- I'm using `pyenv` on Linux primarily
 - had issues with the system trying to use Python for something,
-    system trying to use one of the pyenv versions, which then fails
+    i.e. trying to use one of the pyenv versions, which then fails
     because it's a user-specific version or not the correct one that has
     the needed dependencies installed etc.
+- don't want a venv for every script, this would be just bloat...
 - work-around: create a `.python-version` (`pyenv local ...`) file for
     every location where I have some script - one global version would
     be fine, but the system should not use that - so `pyenv global`
     won't do
 - using `pip` to install stuff to my "local" Python versions
-- don't want a venv for every script, this would be just bloat...
 
 ### package management
 
@@ -76,11 +76,11 @@ Those texts made me rethink my Python workflow...
     `venv`...
 - there are many other tools out there around Python and Python
     package management (e.g. conda - you still need pip? - git is a
-    separate install?!), some of which I tried, but none of them ever
+    package to install?!), some of which I tried, but none of them ever
     felt very intuitive or very well-suited for me
 - comparison to other, "more modern" languages:
-  - Go: one tool, go mod cli
-  - Rust: one tool, cargo cli
+  - Go: one tool, go mod cli, + go.mod file
+  - Rust: one tool, cargo cli, + cargo.toml file
   - Zig: one tool, directly via zig cli / build system / zon file
 
 ## wishlist
@@ -88,7 +88,6 @@ Those texts made me rethink my Python workflow...
 - manage Python versions, venvs and packages with one tool!
 - easily include local, editable packages
 - should be an overall reproducible process, not too complicated
-    (towards FAIR research software...)
 - it shouldn't interfere with "normal" Python usage; e.g. just type
     `$ python` to get into a default Python interpreter etc.
 
@@ -223,7 +222,7 @@ aliases for those in my shell config file.
 
 <https://docs.astral.sh/uv/guides/scripts/>
 
-Suppose we have a script that just needs some version of a package;
+Suppose we have a script that just needs *some* version of a package;
 
 ``` py
 import numpy as np
@@ -259,11 +258,12 @@ special cases.
 ## editor integration
 
 Does your IDE recognize uv environments? I don't have a "definite"
-editor for Python, so I tried some options which I use from time to time
-(however I feel that day...).
+editor for Python, so I tried some options which I use from time to
+time.
 
 ### VSCode (VSCodium)
 
+- prerequisites: Python extension installed
 - venv created by uv is selectable and gets correctly activated
 - if you want to have the "run file in terminal" option, you will have
     to install 'ipython' to the venv of the project by running
@@ -281,15 +281,19 @@ editor for Python, so I tried some options which I use from time to time
 
 ### Zed
 
-- recognizes the venv, but failed to activate it on my system (tries
-    to use bash, but my default shell is fish)
+- Python support built-in
+- venv created by uv gets correctly activated; make sure to configure
+    the correct shell in the [terminal
+    settings](https://zed.dev/docs/configuring-zed#terminal-detect_venv)
+- works out-of-the-box otherwise
 
 ### Neovim
 
 - works for developing packages that have their venv. Use
     `"linux-cultist/venv-selector.nvim"` to select the venv
-- tried with [a LazyVim
-    configuration](https://github.com/FObersteiner/lazy.nvim)
+- tried with [my LazyVim
+    configuration](https://github.com/FObersteiner/lazy.nvim); Python
+    language support / configuration can be tricky imho
 
 ### Jupyter Notebook
 
@@ -371,5 +375,5 @@ selected. This allows e.g. to `!uv add` dependencies or
 ## Overall experience
 
 - very nice to have one tool for everything
-- yes, it is fast... Good caching is key
+- yes, it is fast... clever caching is key!
 - very good documentation
