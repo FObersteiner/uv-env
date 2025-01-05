@@ -9,7 +9,7 @@ See also: [What is the difference between venv, pyvenv, pyenv,
 virtualenv, virtualenvwrapper, pipenv,
 etc?](https://stackoverflow.com/q/41573587/10197418)
 
-## Content
+## content
 
 - [motivation](#motivation)
 - [background](#background)
@@ -39,12 +39,12 @@ etc?](https://stackoverflow.com/q/41573587/10197418)
 - [move a pyenv/poetry managed project to
       uv](#move-a-pyenvpoetry-managed-project-to-uv)
   - [CI](#ci)
-- [Publishing with
+- [publishing with
       uv](#publishing-with-uv)
-- [Misc](#misc)
+- [misc](#misc)
   - [beginner-friendliness](#beginner-friendliness)
   - [workspaces](#workspaces)
-- [Overall
+- [overall
       experience](#overall-experience)
 - [TODO / outlook](#todo-outlook)
 
@@ -366,7 +366,7 @@ selected. This allows e.g. to `!uv add` dependencies or
 
 <https://docs.astral.sh/uv/guides/integration/gitlab/>
 
-## Publishing with uv
+## publishing with uv
 
 [docs](https://docs.astral.sh/uv/guides/publish/)
 
@@ -392,7 +392,7 @@ license-files = []
 
 `warning: uv publish is experimental and may change without warning`
 
-## Misc
+## misc
 
 ### beginner-friendliness
 
