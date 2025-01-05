@@ -2,7 +2,14 @@
 
 # uv
 
-## TOC
+"There should be one -- and preferably only one -- obvious way to do
+it." -- The Zen of Python
+
+See also: [What is the difference between venv, pyvenv, pyenv,
+virtualenv, virtualenvwrapper, pipenv,
+etc?](https://stackoverflow.com/q/41573587/10197418)
+
+## Content
 
 - [motivation](#motivation)
 - [background](#background)
@@ -40,13 +47,6 @@
 - [Overall
       experience](#overall-experience)
 - [TODO / outlook](#todo-outlook)
-
-"There should be one -- and preferably only one -- obvious way to do
-it." -- The Zen of Python
-
-See also: [What is the difference between venv, pyvenv, pyenv,
-virtualenv, virtualenvwrapper, pipenv,
-etc?](https://stackoverflow.com/q/41573587/10197418)
 
 ## motivation
 
