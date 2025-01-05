@@ -1,44 +1,45 @@
 (Dec 2024 / Jan 2025)
 
-- [uv](#uv)
-  - [motivation](#motivation)
-  - [background](#background)
-    - [package
-            management](#package-management)
-  - [wishlist](#wishlist)
-  - [what is uv?](#what-is-uv)
-    - [who is astral, the company behind
-            uv?](#who-is-astral-the-company-behind-uv)
-    - [blazingly fast !?](#blazingly-fast)
-  - [installation](#installation)
-    - [basic commands](#basic-commands)
-    - [python version
-            management](#python-version-management)
-    - [project management /
-            venvs](#project-management-venvs)
-    - [python tools](#python-tools)
-    - [single-file
-            scripts](#single-file-scripts)
-  - [editor
-        integration](#editor-integration)
-    - [VSCode (VSCodium)](#vscode-vscodium)
-    - [Spyder](#spyder)
-    - [Zed](#zed)
-    - [Neovim](#neovim)
-    - [Jupyter Notebook](#jupyter-notebook)
-  - [move a pyenv/poetry managed project to
-        uv](#move-a-pyenvpoetry-managed-project-to-uv)
-    - [CI](#ci)
-  - [Publishing with
-        uv](#publishing-with-uv)
-  - [Misc](#misc)
-    - [beginner-friendliness](#beginner-friendliness)
-    - [workspaces](#workspaces)
-  - [Overall
-        experience](#overall-experience)
-  - [TODO / outlook](#todo-outlook)
-
 # uv
+
+## TOC
+
+- [motivation](#motivation)
+- [background](#background)
+  - [package
+          management](#package-management)
+- [wishlist](#wishlist)
+- [what is uv?](#what-is-uv)
+  - [who is astral, the company behind
+          uv?](#who-is-astral-the-company-behind-uv)
+  - [blazingly fast !?](#blazingly-fast)
+- [installation](#installation)
+  - [basic commands](#basic-commands)
+  - [python version
+          management](#python-version-management)
+  - [project management /
+          venvs](#project-management-venvs)
+  - [python tools](#python-tools)
+  - [single-file
+          scripts](#single-file-scripts)
+- [editor
+      integration](#editor-integration)
+  - [VSCode (VSCodium)](#vscode-vscodium)
+  - [Spyder](#spyder)
+  - [Zed](#zed)
+  - [Neovim](#neovim)
+  - [Jupyter Notebook](#jupyter-notebook)
+- [move a pyenv/poetry managed project to
+      uv](#move-a-pyenvpoetry-managed-project-to-uv)
+  - [CI](#ci)
+- [Publishing with
+      uv](#publishing-with-uv)
+- [Misc](#misc)
+  - [beginner-friendliness](#beginner-friendliness)
+  - [workspaces](#workspaces)
+- [Overall
+      experience](#overall-experience)
+- [TODO / outlook](#todo-outlook)
 
 "There should be one -- and preferably only one -- obvious way to do
 it." -- The Zen of Python
