@@ -1,3 +1,5 @@
+(Dec 2024 / Jan 2025)
+
 - [uv](#uv)
   - [motivation](#motivation)
   - [background](#background)
@@ -7,7 +9,7 @@
   - [what is uv?](#what-is-uv)
     - [who is astral, the company behind
             uv?](#who-is-astral-the-company-behind-uv)
-    - [blazingly fast!?](#blazingly-fast)
+    - [blazingly fast !?](#blazingly-fast)
   - [installation](#installation)
     - [basic commands](#basic-commands)
     - [python version
@@ -27,10 +29,14 @@
   - [move a pyenv/poetry managed project to
         uv](#move-a-pyenvpoetry-managed-project-to-uv)
     - [CI](#ci)
+  - [Publishing with
+        uv](#publishing-with-uv)
   - [Misc](#misc)
-  - [TODO](#todo)
+    - [beginner-friendliness](#beginner-friendliness)
+    - [workspaces](#workspaces)
   - [Overall
         experience](#overall-experience)
+  - [TODO / outlook](#todo-outlook)
 
 # uv
 
@@ -109,7 +115,7 @@ A Python version, package and project manager,
     Caffeinated Capital (another venture capital firm,
     <https://caffeinatedcapital.com/>) and Guillermo Rauch / Vercel Inc.
 
-### blazingly fast!?
+### blazingly fast !?
 
 astral/uv seems to be very focused on performance. That is great. I'm a
 fan of good and performant software. But they rub it in your face
@@ -281,11 +287,10 @@ time.
 
 ### Zed
 
-- Python support built-in
 - venv created by uv gets correctly activated; make sure to configure
     the correct shell in the [terminal
     settings](https://zed.dev/docs/configuring-zed#terminal-detect_venv)
-- works out-of-the-box otherwise
+- works out-of-the-box otherwise; Python support built in
 
 ### Neovim
 
@@ -360,20 +365,59 @@ selected. This allows e.g. to `!uv add` dependencies or
 
 <https://docs.astral.sh/uv/guides/integration/gitlab/>
 
+## Publishing with uv
+
+[docs](https://docs.astral.sh/uv/guides/publish/)
+
+- tried the "manual" publishing to a package index using `uv publish`
+- hit some issues: there seems to be some trouble with setuptools
+    license files, had to add
+
+``` sh
+[tool.setuptools]
+license-files = []
+```
+
+- using another build system (tried hatchling) did not help. see also
+    <https://github.com/astral-sh/uv/issues/9513>.
+
+- setting a custom index for publishing such as test-pypi requires an
+    entry in `[[tool.uv.index]]`, which causes `uv build` to fail
+    totally, since it now tries to fetch projects from test-pypi instead
+    of the normal pypi. It kind of works if you comment out the
+    non-standard index while building, then un-comment it while
+    uploading. Not ideal... Setting the URL via the `--index` flag might
+    work better; did not test.
+
+`warning: uv publish is experimental and may change without warning`
+
 ## Misc
 
-- what are **workspaces**, what are they good for? Large codebases,
-    managed as individual packages with their own pyproject.toml but a
-    common .lock file.
+### beginner-friendliness
 
-## TODO
+- uv is obviously intended for developers, and I think it works very
+    well if you've been struggling with the many tools in Python version
+    handling and package development
+- command line only - this might already be a stopper for beginners,
+    especially coming from Windows I guess
+- for absolute beginners, I'd probably still suggest to go with pyenv
+    or a simple user-install of some Python version on Windows (once you
+    hit a wall, go for more advanced tools - don't solve problems you
+    don't have)
 
-- uv with projects that aren't Python-only
-- publish a project to pypi with uv
-- CI: gitlab
+### workspaces
+
+- what are **workspaces**, what are they good for? --\> Large
+    codebases, managed as individual packages with their own
+    pyproject.toml but a common .lock file.
 
 ## Overall experience
 
 - very nice to have one tool for everything
 - yes, it is fast... clever caching is key!
 - very good documentation
+
+## TODO / outlook
+
+- uv with projects that aren't Python-only
+- CI: gitlab
