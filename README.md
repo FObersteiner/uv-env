@@ -20,7 +20,7 @@ etc?](https://stackoverflow.com/q/41573587/10197418)
   - [who is astral, the company behind
           uv?](#who-is-astral-the-company-behind-uv)
   - [blazingly fast !?](#blazingly-fast)
-- [installation](#installation)
+- [installation and usage](#installation-and-usage)
   - [basic commands](#basic-commands)
   - [python version management](#python-version-management)
   - [project management / venvs](#project-management-venvs)
@@ -126,7 +126,7 @@ It is. astral/uv seems to be very focused on performance. That is great.
 I'm a fan of good and efficient software. The advertisement for it is a
 bit too much for my taste though.
 
-## installation
+## installation and usage
 
 I started from a clean system (no pyenv etc., just the Python
 installation that comes with the system/Linux base); you can e.g. use a
