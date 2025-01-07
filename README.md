@@ -1,4 +1,4 @@
-(Dec 2024 / Jan 2025)
+(Dec 2024 / Jan 2025, uv v0.5)
 
 # uv
 
@@ -13,24 +13,20 @@ etc?](https://stackoverflow.com/q/41573587/10197418)
 
 - [motivation](#motivation)
 - [background](#background)
-  - [package
-          management](#package-management)
+  - [package management](#package-management)
 - [wishlist](#wishlist)
 - [what is uv?](#what-is-uv)
+  - [who is it for?](#who-is-it-for)
   - [who is astral, the company behind
           uv?](#who-is-astral-the-company-behind-uv)
   - [blazingly fast !?](#blazingly-fast)
 - [installation](#installation)
   - [basic commands](#basic-commands)
-  - [python version
-          management](#python-version-management)
-  - [project management /
-          venvs](#project-management-venvs)
+  - [python version management](#python-version-management)
+  - [project management / venvs](#project-management-venvs)
   - [python tools](#python-tools)
-  - [single-file
-          scripts](#single-file-scripts)
-- [editor
-      integration](#editor-integration)
+  - [single-file scripts](#single-file-scripts)
+- [editor integration](#editor-integration)
   - [VSCode (VSCodium)](#vscode-vscodium)
   - [Spyder](#spyder)
   - [Zed](#zed)
@@ -39,13 +35,8 @@ etc?](https://stackoverflow.com/q/41573587/10197418)
 - [move a pyenv/poetry managed project to
       uv](#move-a-pyenvpoetry-managed-project-to-uv)
   - [CI](#ci)
-- [publishing with
-      uv](#publishing-with-uv)
-- [misc](#misc)
-  - [beginner-friendliness](#beginner-friendliness)
-  - [workspaces](#workspaces)
-- [overall
-      experience](#overall-experience)
+- [publishing with uv](#publishing-with-uv)
+- [overall experience](#overall-experience)
 - [TODO / outlook](#todo-outlook)
 
 ## motivation
@@ -60,7 +51,7 @@ Those texts made me rethink my Python workflow...
 
 - I run Python scripts almost daily and do Python package development
     now and then
-- I'm using `pyenv` on Linux primarily
+- I've used `pyenv` on Linux primarily, to manage Python installations
 - had issues with the system trying to use Python for something,
     i.e. trying to use one of the pyenv versions, which then fails
     because it's a user-specific version or not the correct one that has
@@ -77,8 +68,8 @@ Those texts made me rethink my Python workflow...
 - I've used `poetry` in the past for package management, that is to
     say managing the dependencies (`pyproject.toml`; see also:
     [packaging.python.org](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)),
-    running tests in a virtual environment for reproducibility etc.
-- actually never really got into poetry; feels still a bit unnecessary
+    running tests in a virtual environment for reproducibility
+- actually never really got into poetry; felt still a bit unnecessary
     as I also have/need pyenv to manage Python versions, which come with
     `venv`...
 - there are many other tools out there around Python and Python
@@ -86,24 +77,37 @@ Those texts made me rethink my Python workflow...
     package to install?!), some of which I tried, but none of them ever
     felt very intuitive or very well-suited for me
 - comparison to other, "more modern" languages:
-  - Go: one tool, go mod cli, + go.mod file
-  - Rust: one tool, cargo cli, + cargo.toml file
-  - Zig: one tool, directly via zig cli / build system / zon file
+  - Go: one tool, go mod CLI, + go.mod file
+  - Rust: one tool, cargo CLI, + cargo.toml file
+  - Zig: one tool, directly via zig CLI / build system / zon file,
+        global and local cache
 
 ## wishlist
 
 - manage Python versions, venvs and packages with one tool!
-- easily include local, editable packages
+- easily include local, editable packages, and packages from a git
 - should be an overall reproducible process, not too complicated
 - it shouldn't interfere with "normal" Python usage; e.g. just type
-    `$ python` to get into a default Python interpreter etc.
+    `$ python` to get into a default Python repl etc.
 
 ------------------------------------------------------------------------
 
 ## what is uv?
 
 A Python version, package and project manager,
-<https://docs.astral.sh/uv/> / <https://github.com/astral-sh/uv>.
+<https://docs.astral.sh/uv/> / <https://github.com/astral-sh/uv>
+
+### who is it for?
+
+- uv is obviously intended for developers, and I think it works very
+    well if you've been struggling with the many tools in Python version
+    handling and package development
+- command line only - this might already be a stopper for beginners,
+    especially coming from Windows I guess
+- for absolute beginners, I'd probably still suggest to go with pyenv
+    or a simple user-install of some Python version on Windows (once you
+    hit a wall, go for more advanced tools - don't solve problems you
+    don't have)
 
 ### who is astral, the company behind uv?
 
@@ -118,11 +122,9 @@ A Python version, package and project manager,
 
 ### blazingly fast !?
 
-astral/uv seems to be very focused on performance. That is great. I'm a
-fan of good and performant software. But they rub it in your face
-everywhere. Why? I came here because of the mess that is Python package
-management, not because the tools are slow. And they're using Rust btw.
-Come on, it's just a programming language after all...
+It is. astral/uv seems to be very focused on performance. That is great.
+I'm a fan of good and efficient software. The advertisement for it is a
+bit too much for my taste though.
 
 ## installation
 
@@ -192,7 +194,7 @@ file generated by uv is specific to uv.
 ### python tools
 
 `uvx` runs tools in a temporary environment;
-e.g. `uvx pycowsay 'uv kills!'` gets pycowsay and runs it. This is
+e.g. `uvx pycowsay 'uv kills!'` gets `pycowsay` and runs it. This is
 cached so that the package is not downloaded each time. The cache can be
 refreshed by the `--refresh` (all packages) or
 `--refresh-package <PKG NAME>` option.
@@ -278,7 +280,7 @@ time.
 
 ### Spyder
 
-- you can install and run spyder as a uvx tool; `uvx spyder` /
+- you can install and run Spyder as a uvx tool; `uvx spyder` /
     `uv tool install spyder`
 - to use your project's venv, add spyder-kernels to it: run
     `uv pip install spyder-kernels` in the activated venv (or add it as
@@ -357,10 +359,10 @@ selected. This allows e.g. to `!uv add` dependencies or
 
 <https://docs.astral.sh/uv/guides/integration/github/#pypi>
 
-- very smooth to switch from poetry in CI to UV
-- runs significantly faster
-- could be better: getting pytest to work was some serious trail and
-    error process
+- overall smooth to switch from poetry in CI
+- bonus: CI runs significantly faster, uv's caching mechanism also
+    works here
+- getting pytest to work was some serious trail and error process
 
 #### gitlab
 
@@ -370,16 +372,19 @@ selected. This allows e.g. to `!uv add` dependencies or
 
 [docs](https://docs.astral.sh/uv/guides/publish/)
 
+- prerequisite is to build the package by running `uv build`; this in
+    turn requires the definition of a build system in the pyproject file
 - tried the "manual" publishing to a package index using `uv publish`
-- hit some issues: there seems to be some trouble with setuptools
-    license files, had to add
+- there seems to be some trouble with setuptools license files, had to
+    add
 
-``` sh
+``` toml
+# pyproject.toml 
 [tool.setuptools]
 license-files = []
 ```
 
-- using another build system (tried hatchling) did not help. see also
+- using another build system (tried hatchling) did not help; see also
     <https://github.com/astral-sh/uv/issues/9513>.
 
 - setting a custom index for publishing such as test-pypi requires an
@@ -392,27 +397,7 @@ license-files = []
 
 `warning: uv publish is experimental and may change without warning`
 
-## misc
-
-### beginner-friendliness
-
-- uv is obviously intended for developers, and I think it works very
-    well if you've been struggling with the many tools in Python version
-    handling and package development
-- command line only - this might already be a stopper for beginners,
-    especially coming from Windows I guess
-- for absolute beginners, I'd probably still suggest to go with pyenv
-    or a simple user-install of some Python version on Windows (once you
-    hit a wall, go for more advanced tools - don't solve problems you
-    don't have)
-
-### workspaces
-
-- what are **workspaces**, what are they good for? --\> Large
-    codebases, managed as individual packages with their own
-    pyproject.toml but a common .lock file.
-
-## Overall experience
+## overall experience
 
 - very nice to have one tool for everything
 - yes, it is fast... clever caching is key!
