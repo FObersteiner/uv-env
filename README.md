@@ -153,6 +153,7 @@ After install, you have
 
 - list available versions: `uv python list`
 - install a specific version: `uv python install 3.12.7`
+- check installed version: `uv run --python 3 python -c "import sys; print(sys.version)"`
 - get a Python interpreter / repl: `uv run python` (latest version),
     e.g. `uv run --python 3.12.7 -- python` to get a specific version.
   - I didn't find this very useful though, since that Python
