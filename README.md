@@ -288,5 +288,6 @@ license-files = []
 
 ## TODO / outlook
 
+- uv inside a docker container
 - uv with projects that aren't Python-only
 - CI: gitlab
