@@ -33,7 +33,7 @@ See also: [What is the difference between venv, pyvenv, pyenv, virtualenv, virtu
   - [CI](#ci)
 - [publishing with uv](#publishing-with-uv)
 - [overall experience](#overall-experience)
-- [TODO / outlook](#todo-/-outlook)
+- [TODO / outlook](#todo-outlook)
 
 ## motivation
 
