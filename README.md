@@ -33,7 +33,7 @@ See also: [What is the difference between venv, pyvenv, pyenv, virtualenv, virtu
   - [CI](#ci)
 - [publishing with uv](#publishing-with-uv)
 - [overall experience](#overall-experience)
-- [TODO / outlook](#todo-outlook)
+- [TODO / outlook](#todo-/-outlook)
 
 ## motivation
 
@@ -126,6 +126,8 @@ Lock files. Allow a reproducible build, but aren't standardized. A lock file gen
 
 - `uv lock`: make the lock file. `uv lock -U` to update dependencies in the lock file
 - `uv sync`: synchronize the venv with the lock file; `uv lock -U && uv sync` to update everything
+
+Dependencies from requirements.txt, e.g. if you want to use somebody else's project, which doesn't have a proper pyproject.toml (e.g. as poetry creates them): Create a venv for the project, activate it, then install its dependencies to it via `uv pip sync ./path-to/requirements.txt`.
 
 #### dependencies: special cases
 
