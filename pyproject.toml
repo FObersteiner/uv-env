@@ -5,6 +5,7 @@ description = "uv python playground"
 readme = "README.md"
 requires-python = ">=3.12.8,<3.13"
 dependencies = [
+  "black>=24.10.0",
   "bokeh>=3.6.2",
   "ipython>=8.31.0",
   "matplotlib>=3.10.0",
@@ -12,8 +13,10 @@ dependencies = [
   "polars>=1.18.0",
   "pydantic>=2.10.4",
   "pyfuppes>=0.5.1",
+  "ruff>=0.9.6",
   "scipy>=1.14.1",
   "spyder>=6.0.3",
+  "toml>=0.10.2",
 ]
 
 [tool.uv.sources]
