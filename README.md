@@ -1,3 +1,6 @@
+<!--
+pandoc -f gfm --toc -s README.md -o r.md
+-->
 (Dec 2024 / Jan 2025, uv v0.5)
 
 # uv
@@ -20,7 +23,7 @@ See also: [What is the difference between venv, pyvenv, pyenv, virtualenv, virtu
 - [installation and usage](#installation-and-usage)
   - [basic commands](#basic-commands)
   - [python version management](#python-version-management)
-  - [project management / venvs](#project-management-venvs)
+  - [project management / venvs](#project-management--venvs)
   - [python tools](#python-tools)
   - [single-file scripts](#single-file-scripts)
 - [editor integration](#editor-integration)
@@ -33,7 +36,7 @@ See also: [What is the difference between venv, pyvenv, pyenv, virtualenv, virtu
   - [CI](#ci)
 - [publishing with uv](#publishing-with-uv)
 - [overall experience](#overall-experience)
-- [TODO / outlook](#todo-outlook)
+- [TODO / outlook](#todo--outlook)
 
 ## motivation
 
@@ -127,7 +130,9 @@ Lock files. Allow a reproducible build, but aren't standardized. A lock file gen
 - `uv lock`: make the lock file. `uv lock -U` to update dependencies in the lock file
 - `uv sync`: synchronize the venv with the lock file; `uv lock -U && uv sync` to update everything
 
-Dependencies from requirements.txt, e.g. if you want to use somebody else's project, which doesn't have a proper pyproject.toml (e.g. as poetry creates them): Create a venv for the project, activate it, then install its dependencies to it via `uv pip sync ./path-to/requirements.txt`.
+Dependencies **from requirements.txt**, e.g. if you want to use somebody else's project, which doesn't have a proper pyproject.toml (e.g. as poetry creates them): Create a venv for the project, activate it, then install its dependencies to it via `uv pip sync ./path-to/requirements.txt`.
+
+Dependencies **to requirements.txt**, e.g. from `pyproject.toml`: `uv pip compile pyproject.toml -o requirements.txt`. Note that this creates exact dependencies (e.g. `urllib3==2.3.0`), and includes indirect dependencies which the pyproject.toml does not specify. To upgrade all dependencies in the requirements.txt, add the `--upgrade` flag to the compile command.
 
 #### dependencies: special cases
 
@@ -260,7 +265,7 @@ Now the dedicated kernel with name <kernel-name> can be selected. This allows e.
 
 #### gitlab
 
-<https://docs.astral.sh/uv/guides/integration/gitlab/>
+TODO : <https://docs.astral.sh/uv/guides/integration/gitlab/>
 
 ## publishing with uv
 
