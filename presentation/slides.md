@@ -22,29 +22,30 @@ No sunscreen required ☀
 Florian Obersteiner (<f.obersteiner@kit.edu>), DM group, IMKASF
 
 - data management & IT
-- background: experimental atmospheric science
-- software development: Python, go, LabVIEW, Zig, ...
+- background: experimental atmospheric research
+- tech stack: Python, go, LabVIEW, Zig, ...
   - mostly on Linux
+  - current projects: web applications and containerization
 
 ---
 
 # Outline
 
-- Challenges in Python version and package management
-- What is `uv` and how can it help
-- Usage examples
+- challenges in Python version and package management
+- what is `uv` and how can it help?
+- usage examples & Q&A
 
 ---
-
 layout: image-right
 image: ./resources/python_environment.png
 ---
 
 # Motivation
 
-- Managing multiple Python versions and virtual environments required for package developement and collaboration
-- Complexity: many existing tools like pyenv, pip, pipx, poetry, venv, conda ...
-- Especially for beginners, this can become a waste of time
+- multiple Python versions and virtual environments required for package development and collaboration
+- many existing tools like pyenv, pip, pipx, poetry, venv, conda ...
+- especially for beginners, this can become a waste of time
+  - ...or even scare them away from Python, back to Matlab 😳
 
 <style>
 
@@ -65,34 +66,34 @@ footer {
 
 ---
 
-## what I have worked with
+## What I have worked with
+<br>
 
 - Python version management: <span class="text-lime font-bold text-xl"> `pyenv` </span>
   - user installations and [`win-pyenv`](https://github.com/pyenv-win/pyenv-win) on Windows, back in the days
-- Package installation: <span class="text-lime font-bold text-xl"> `pip` </span>
-- Virtual environments: Python / <span class="text-lime font-bold text-xl"> `venv` </span>
-- Package development / management:  <span class="text-lime font-bold text-xl"> `poetry` </span> (comes with its own venv...)
+- package installation: <span class="text-lime font-bold text-xl"> `pip` </span>
+- virtual environments: Python / <span class="text-lime font-bold text-xl"> `venv` </span>
+- package development / management:  <span class="text-lime font-bold text-xl"> `poetry` </span> (comes with its own venv...)
 
 **⅀ 5+ tools** - and no code written...
 
-<div class="text-red-400 font-bold text-xl"> ↦ A simplified, all-in-one solution ?! </div>
+<div class="text-red-400 font-bold text-xl">A simplified, all-in-one solution ?! </div>
 
 ---
 
-# Introducing
+# Introducing... What is `uv`?
+<br>
 
-## What is `uv`?
-
-- A CLI tool
-- A unified Python version, package, and project manager
-- Combines functionalities of multiple tools in one - and is available for Linux, Mac and Windows
-- Based on [rye](https://rye.astral.sh/), now developed at Astral, the creators of the `ruff` Python linter
+- 👾 a CLI tool
+- Python version, package, and project manager in one executable
+- based on [rye](https://rye.astral.sh/), now developed by Astral, the creators of the `ruff` Python linter
+- available for Linux, Mac and Windows
 
 ---
 
 # Exemplary commands
 
-```sh {1|3|5|7|all}
+```sh {1|3|5|7|9|all}{lines:true,startLine:1}
 uv python install 3.12.7 # install a Python version
 
 uv init [project-name] # create a Python project, including a venv
@@ -100,7 +101,11 @@ uv init [project-name] # create a Python project, including a venv
 uv add [name-of-dependency] # add a dependency to a project
 
 uv lock -U && uv sync # make a lock file and upgrade everythin in the venv
+
+uv run [script-name] # run a script in the project
 ```
+
+[CLI reference](https://docs.astral.sh/uv/reference/cli/#uv)
 
 ---
 
@@ -149,14 +154,36 @@ uv lock -U && uv sync # make a lock file and upgrade everythin in the venv
 
 -->
 
+<!--
+# Test
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+<style>
+ul {
+    list-style: square;
+}
+ul li {
+    margin-bottom: 16px;
+}
+</style>
+-->
+
 ---
 
 # Conclusion: why use uv?
 
 - simplifies environment setup and management, from Python version to virtual environment
 - reduces the learning curve associated with multiple tools
-- uv.lock: ensures consistent environments across different systems
-- pleasant user experience; fast dependency resolution, intelligent caching
+- easily reproduce environments across different systems
+  - `uv.lock` and derived `requirements.txt` for use with other package managers
+  - CI integration
+  - Docker support
+- overall pleasant user experience; fast dependency resolution and intelligent caching
 
 ---
 
