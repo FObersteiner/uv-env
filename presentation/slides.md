@@ -33,7 +33,7 @@ Florian Obersteiner (<f.obersteiner@kit.edu>), DM group, IMKASF
 
 - challenges in Python version and package management
 - what is `uv` and how can it help?
-- usage examples & Q&A
+- live demo, Q&A
 
 ---
 layout: image-right
@@ -111,77 +111,22 @@ uv run [script-name] # run a script in the project
 
 # Demo
 
-<!--
+(TODO)
 
-# Installation and Basic Usage
-
-    Getting Started:
-        Installation command: pip install uv
-        Initialize a new project: uv init
-        Add dependencies: uv add numpy pandas
-        Run scripts: uv run script.py
-
-# Managing Python Versions with uv
-
-    Version Control:
-        Set a specific Python version for a project: uv set-python 3.9
-        Switch between versions effortlessly.
-        Ensure compatibility across different projects.
-
-# Project Configuration
-
-    pyproject.toml:
-        Centralized configuration for project metadata and dependencies.
-        Example structure:
-
-        [project]
-        name = "example-project"
-        version = "0.1.0"
-        description = "A sample project using uv"
-        dependencies = ["numpy", "pandas"]
-
-# Transitioning to uv
-
-    Migrating Existing Projects:
-        Steps to move from tools like pyenv or poetry to uv.
-        Benefits of consolidating tools.
-
-# Real-World Application
-
-    Case Study:
-        Briefly discuss a scenario where uv streamlined a data science project.
-        Highlight improvements in setup time and environment consistency.
-
--->
-
-<!--
-# Test
-
-<ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ul>
-
-<style>
-ul {
-    list-style: square;
-}
-ul li {
-    margin-bottom: 16px;
-}
-</style>
--->
+- installation
+- running single file scripts
+- project configuration
+- version pinning for reproducible environments
 
 ---
 
 # Conclusion: why use uv?
 
-- simplifies environment setup and management, from Python version to virtual environment
+- simplifies environment setup and management, from Python itself to virtual environments
 - reduces the learning curve associated with multiple tools
-- easily reproduce environments across different systems
+- easily reproduces environments across different systems
   - `uv.lock` and derived `requirements.txt` for use with other package managers
-  - CI integration
+  - CI/CD integration
   - Docker support
 - overall pleasant user experience; fast dependency resolution and intelligent caching
 
