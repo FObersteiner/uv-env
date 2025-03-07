@@ -19,13 +19,10 @@ No sunscreen required ☀
 
 # About
 
-Florian Obersteiner (<f.obersteiner@kit.edu>), DM group, IMKASF
+Florian Obersteiner <f.obersteiner@kit.edu>, DM group, IMKASF
 
-- data management & IT
+- research software engineer, data management & IT
 - background: experimental atmospheric research
-- tech stack: Python, go, LabVIEW, Zig, ...
-  - mostly on Linux
-  - current projects: web applications and containerization
 
 ---
 
@@ -36,16 +33,53 @@ Florian Obersteiner (<f.obersteiner@kit.edu>), DM group, IMKASF
 - live demo, Q&A
 
 ---
+
+# Motivation `#1`
+
+From Samuel & Mietchen, 2024 (<https://doi.org/10.1093/gigascience/giad113>), <br> "Computational reproducibility of Jupyter notebooks from biomedical publications"
+
+<v-clicks>
+
+- PubMed Central --> search full text --> find Jupyter notebook on github --> try to reproduce results
+- analyzed `n` = 27271 notebooks from 2660 repositories (3467 publications)
+
+</v-clicks>
+
+
+<v-click>
+
+<h2 style="font-style: italic;">results</h2>
+
+</v-click>
+
+<v-clicks>
+
+- `m` = 15817 had requirements file (requirements.txt, setup.py, pipfile etc.) (58% of `n`)
+- for `k` = 10388 of those, dependencies could be installed (66% of `m`)
+- `l` = 1203 of those ran without errors (12% of `k`)
+- 879 of those produced identical results as noted within the notebooks (8.5% of `k`, 73% of `l`)
+
+</v-clicks>
+
+
+<style>
+  ul li {
+    color: cyan;
+  }
+</style>
+
+
+---
 layout: image-right
 image: ./resources/python_environment.png
 ---
 
-# Motivation
+# Motivation `#2`
 
 - multiple Python versions and virtual environments required for package development and collaboration
-- many existing tools like pyenv, pip, pipx, poetry, venv, conda ...
+- many existing tools like pyenv, pip, pipx, poetry, venv, conda, jupyter ...
 - especially for beginners, this can become a waste of time
-  - ...or even scare them away from Python, back to Matlab 😳
+  - ...or even scare them away from Python, to Matlab or Julia 😳
 
 <style>
 
@@ -69,11 +103,11 @@ footer {
 ## What I have worked with
 <br>
 
-- Python version management: <span class="text-lime font-bold text-xl"> `pyenv` </span>
+- Python version management: <span class="text-green font-bold text-xl"> `pyenv` </span>
   - user installations and [`win-pyenv`](https://github.com/pyenv-win/pyenv-win) on Windows, back in the days
-- package installation: <span class="text-lime font-bold text-xl"> `pip` </span>
-- virtual environments: Python / <span class="text-lime font-bold text-xl"> `venv` </span>
-- package development / management:  <span class="text-lime font-bold text-xl"> `poetry` </span> (comes with its own venv...)
+- package installation: <span class="text-green font-bold text-xl"> `pip` </span>
+- virtual environments: Python / <span class="text-green font-bold text-xl"> `venv` </span>
+- package development / management:  <span class="text-green font-bold text-xl"> `poetry` </span> (comes with its own venv...)
 
 **⅀ 5+ tools** - and no code written...
 
@@ -93,7 +127,7 @@ footer {
 
 # Exemplary commands
 
-```sh {1|3|5|7|9|all}{lines:true,startLine:1}
+```sh {1|3|5|7|9|11|all}{lines:true,startLine:1}
 uv python install 3.12.7 # install a Python version
 
 uv init [project-name] # create a Python project, including a venv
@@ -101,6 +135,8 @@ uv init [project-name] # create a Python project, including a venv
 uv add [name-of-dependency] # add a dependency to a project
 
 uv lock -U && uv sync # make a lock file and upgrade everythin in the venv
+
+uv pip compile pyproject.toml -o requirements.txt # make requirements file with exact versions
 
 uv run [script-name] # run a script in the project
 ```
