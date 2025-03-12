@@ -137,9 +137,11 @@ Lock files. Allow a reproducible build, but aren't standardized. A lock file gen
 - `uv lock`: make the lock file. `uv lock -U` to update dependencies in the lock file
 - `uv sync`: synchronize the venv with the lock file; `uv lock -U && uv sync` to update everything
 
-Dependencies **from requirements.txt**, e.g. if you want to use somebody else's project, which doesn't have a proper pyproject.toml (e.g. as poetry creates them): Create a venv for the project, activate it, then install its dependencies to it via `uv pip sync ./path-to/requirements.txt`.
+Dependencies **from requirements.txt**, e.g. if you want to use somebody else's project, which doesn't have a proper pyproject.toml (e.g. as poetry creates them): Create a venv for the project, activate it, then install its dependencies to it via `uv pip sync path-to-requirements.txt`. `uv pip install -r path-to-requirements.txt` also works.
 
 Dependencies **to requirements.txt**, e.g. from `pyproject.toml`: `uv pip compile pyproject.toml -o requirements.txt`. Note that this creates exact dependencies (e.g. `urllib3==2.3.0`), and includes indirect dependencies which the pyproject.toml does not specify. To upgrade all dependencies in the requirements.txt, add the `--upgrade` flag to the compile command.
+
+Add dependencies *from `requirements.txt` to `pyproject.toml`*: `cat requirements.txt | grep -E '^[^# ]' | cut -d= -f1 | xargs -n 1 uv add`
 
 #### dependencies: special cases
 
