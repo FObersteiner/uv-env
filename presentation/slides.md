@@ -21,12 +21,18 @@ No sunscreen required ☀
 
 Florian Obersteiner <f.obersteiner@kit.edu>, DM group, IMKASF
 
-- research software engineer, data management & IT
+- research software engineering, data management & IT
 - background: experimental atmospheric research
+- 🤓 ♥️ Linux, Python, Go, Zig, ...
+
+---
+
+Python Group ?!
 
 ---
 
 # Outline
+<br>
 
 - challenges in Python version and package management
 - what is `uv` and how can it help?
@@ -61,37 +67,42 @@ From Samuel & Mietchen, 2024 (<https://doi.org/10.1093/gigascience/giad113>), <b
 
 </v-clicks>
 
+<v-click>
+
+<h2 style="font-style: italic;">... FAIR ?</h2>
+
+</v-click>
 
 <style>
   ul li {
-    color: cyan;
+    color: cyan; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
   }
 </style>
 
 
 ---
 layout: image-right
-image: ./resources/python_environment.png
+image: ./resources/python_environment_.png
 ---
 
 # Motivation `#2`
+<br>
 
 - multiple Python versions and virtual environments required for package development and collaboration
-- many existing tools like pyenv, pip, pipx, poetry, venv, conda, jupyter ...
+- many existing tools like pyenv, pip, pipx, poetry, venv, conda, jupyter/ipynb ...
 - especially for beginners, this can become a waste of time
   - ...or even scare them away from Python, to Matlab or Julia 😳
 
 <style>
-
-footer {
-  position: absolute;
-  bottom: 10px;
-  left: 35px;
-  width: calc(100% - 20px);
-  text-align: left;
-  font-size: 0.8em;
-  color: #888;
-}
+  footer {
+    position: absolute;
+    bottom: 10px;
+    left: 35px;
+    width: calc(100% - 20px);
+    text-align: left;
+    font-size: 0.8em;
+    color: #888;
+  }
 </style>
 
 <footer>
@@ -100,18 +111,34 @@ footer {
 
 ---
 
-## What I have worked with
+# What I have worked with
 <br>
 
-- Python version management: <span class="text-green font-bold text-xl"> `pyenv` </span>
+- Python version management: <span class="highlight"> `pyenv` </span>
   - user installations and [`win-pyenv`](https://github.com/pyenv-win/pyenv-win) on Windows, back in the days
-- package installation: <span class="text-green font-bold text-xl"> `pip` </span>
-- virtual environments: Python / <span class="text-green font-bold text-xl"> `venv` </span>
-- package development / management:  <span class="text-green font-bold text-xl"> `poetry` </span> (comes with its own venv...)
+- package installation: <span class="highlight"> `pip` </span>
+- virtual environments: Python / <span class="highlight"> `venv` </span>
+- package development / management:  <span class="highlight"> `poetry` </span> (comes with its own venvs...)
 
 **⅀ 5+ tools** - and no code written...
 
-<div class="text-red-400 font-bold text-xl">A simplified, all-in-one solution ?! </div>
+<div class="highlight2">A simplified, all-in-one solution ?! </div>
+
+
+<style>
+  .highlight {
+    color: lime; /*'lime' in dark-mode, 'darkgreen' in light-mode */
+    font-style: bold;
+    font-size: 1.2em;
+  }
+  .highlight2 {
+    color: orangered;
+    font-style: bold;
+    font-size: 1.4em;
+  }
+</style>
+
+
 
 ---
 
@@ -126,6 +153,7 @@ footer {
 ---
 
 # Exemplary commands
+<br>
 
 ```sh {1|3|5|7|9|11|all}{lines:true,startLine:1}
 uv python install 3.12.7 # install a Python version
@@ -140,32 +168,50 @@ uv pip compile pyproject.toml -o requirements.txt # make requirements file with 
 
 uv run [script-name] # run a script in the project
 ```
+<br>
 
 [CLI reference](https://docs.astral.sh/uv/reference/cli/#uv)
 
 ---
 
 # Demo
-
-(TODO)
+<br>
 
 - installation
-- running single file scripts
+- Python versions
+- running single-file scripts (🦾 PEP 723)
+- specify dependencies
 - project configuration
-- version pinning for reproducible environments
 
 ---
 
 # Conclusion: why use uv?
+<br>
 
 - simplifies environment setup and management, from Python itself to virtual environments
 - reduces the learning curve associated with multiple tools
+- very good docs
 - easily reproduces environments across different systems
-  - `uv.lock` and derived `requirements.txt` for use with other package managers
-  - CI/CD integration
-  - Docker support
-- overall pleasant user experience; fast dependency resolution and intelligent caching
+  - `requirements.txt` for use with other package managers
+  - Github & Gitlab CI/CD
+  - pre-commit
+  - Docker
 
----
 
-# Q&A
+=> overall pleasant user experience; all-in-one tool, fast dependency resolution and intelligent caching
+
+<style>
+  footer {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    width: calc(100% - 20px);
+    text-align: left;
+    font-size: 0.8em;
+    color: #888;
+  }
+</style>
+
+<footer>
+  notes + this presentation: <a href="https://github.com/FObersteiner/uv-env/">on github</a>
+</footer>
