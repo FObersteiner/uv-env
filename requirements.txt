@@ -2,7 +2,7 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 -e ../pyFuppes
     # via uv-env (pyproject.toml)
-aiohappyeyeballs==2.5.0
+aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.11.13
     # via spyder
@@ -14,7 +14,7 @@ annotated-types==0.7.0
     # via pydantic
 arrow==1.3.0
     # via cookiecutter
-astroid==3.3.8
+astroid==3.3.9
     # via pylint
 asttokens==3.0.0
     # via stack-data
@@ -22,7 +22,7 @@ asyncssh==2.20.0
     # via spyder
 atomicwrites==1.4.1
     # via spyder
-attrs==25.1.0
+attrs==25.3.0
     # via
     #   aiohttp
     #   jsonschema
@@ -41,7 +41,7 @@ black==25.1.0
     #   python-lsp-black
 bleach==6.2.0
     # via nbconvert
-bokeh==3.6.3
+bokeh==3.7.0
     # via uv-env (pyproject.toml)
 certifi==2025.1.31
     # via
@@ -132,7 +132,7 @@ ipykernel==6.29.5
     # via
     #   qtconsole
     #   spyder-kernels
-ipython==8.33.0
+ipython==8.34.0
     # via
     #   uv-env (pyproject.toml)
     #   ipykernel
@@ -226,6 +226,8 @@ multidict==6.1.0
     #   yarl
 mypy-extensions==1.0.0
     # via black
+narwhals==1.30.0
+    # via bokeh
 nbclient==0.10.2
     # via nbconvert
 nbconvert==7.16.6
@@ -301,7 +303,7 @@ platformdirs==4.3.6
     #   yapf
 pluggy==1.5.0
     # via python-lsp-server
-polars==1.24.0
+polars==1.25.1
     # via
     #   uv-env (pyproject.toml)
     #   pyfuppes
@@ -349,7 +351,7 @@ pygments==2.19.1
     #   superqt
 pyjwt==2.10.1
     # via pygithub
-pylint==3.3.4
+pylint==3.3.5
     # via
     #   python-lsp-server
     #   spyder
@@ -408,7 +410,7 @@ pyyaml==6.0.2
     # via
     #   bokeh
     #   cookiecutter
-pyzmq==26.2.1
+pyzmq==26.3.0
     # via
     #   ipykernel
     #   jupyter-client
@@ -450,7 +452,7 @@ rpds-py==0.23.1
     #   referencing
 rtree==1.4.0
     # via spyder
-ruff==0.9.9
+ruff==0.11.0
     # via uv-env (pyproject.toml)
 scikit-learn==1.6.1
     # via pyfuppes
@@ -461,7 +463,7 @@ scipy==1.15.2
     #   scikit-learn
 secretstorage==3.3.3
     # via keyring
-setuptools==75.8.2
+setuptools==76.0.0
     # via spyder
 six==1.17.0
     # via python-dateutil
@@ -503,7 +505,7 @@ text-unidecode==1.3
     # via python-slugify
 textdistance==4.6.3
     # via spyder
-threadpoolctl==3.5.0
+threadpoolctl==3.6.0
     # via scikit-learn
 three-merge==0.1.1
     # via spyder

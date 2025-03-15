@@ -107,3 +107,7 @@ lx ./myproject
     - could also use `setup.py` as source for the requirements
 
 - install from requirements file: `uv pip install -r requirements.txt`
+
+## misc
+
+- `uvx` to use Python tools. Can be convenient for non-Python projects that don't have a venv for example.
