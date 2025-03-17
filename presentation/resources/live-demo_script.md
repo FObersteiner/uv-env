@@ -1,5 +1,11 @@
 # Demo
 
+Multiple options:
+
+1. basics demo (install Python, manage dependencies etc.); see below
+2. daily usage, e.g. FAIROmeta O3 data processing
+3. get a random (non-uv) package and make it managed by uv
+
 ## Setup
 
 - Linux Mint VM (distro doesn't matter much...)
