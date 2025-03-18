@@ -27,7 +27,9 @@ Florian Obersteiner <f.obersteiner@kit.edu>, DM group, IMKASF
 
 ---
 
-Python Group ?!
+# IMK Python Group
+
+Info...
 
 ---
 
@@ -42,11 +44,11 @@ Python Group ?!
 
 # Motivation `#1`
 
-From Samuel & Mietchen, 2024 (<https://doi.org/10.1093/gigascience/giad113>), <br> "Computational reproducibility of Jupyter notebooks from biomedical publications"
+From Samuel & Mietchen, 2024 ([DOI](https://doi.org/10.1093/gigascience/giad113)), <br> "Computational reproducibility of Jupyter notebooks from biomedical publications"
 
 <v-clicks>
 
-- PubMed Central --> search full text --> find Jupyter notebook on github --> try to reproduce results
+- PubMed Central ➡ search full text ➡ find Jupyter notebook on github ⮕ try to reproduce results
 - analyzed `n` = 27271 notebooks from 2660 repositories (3467 publications)
 
 </v-clicks>
@@ -62,14 +64,14 @@ From Samuel & Mietchen, 2024 (<https://doi.org/10.1093/gigascience/giad113>), <b
 
 - `m` = 15817 had requirements file (requirements.txt, setup.py, pipfile etc.) (58% of `n`)
 - for `k` = 10388 of those, dependencies could be installed (66% of `m`)
-- `l` = 1203 of those ran without errors (12% of `k`)
-- 879 of those produced identical results as noted within the notebooks (8.5% of `k`, 73% of `l`)
+- `l` = 1203 of those ran **without errors** (12% of `k`)
+- 879 of those produced **identical results** as noted within the notebooks;<br>**73% of `l`, 8.5% of `k`, 3.2% of `n`**  
 
 </v-clicks>
 
 <v-click>
 
-<h2 style="font-style: italic;">... FAIR ?</h2>
+<h2 style="font-style: italic;">... FAIR software?</h2>
 
 </v-click>
 
@@ -77,6 +79,42 @@ From Samuel & Mietchen, 2024 (<https://doi.org/10.1093/gigascience/giad113>), <b
   ul li {
     color: cyan; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
   }
+</style>
+
+
+
+---
+layout: two-cols
+---
+
+<template v-slot:default>
+
+<div class="portrait">
+    <img src="./resources/but-it-does-run.png" alt="Italian Trulli">
+</div>
+
+</template>
+
+<template v-slot:right>
+
+
+# Some of it.
+
+</template>
+
+
+<style>
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .portrait {
+        height: 96%;
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 50px;
+    }
 </style>
 
 
@@ -89,14 +127,14 @@ image: ./resources/python_environment_.png
 <br>
 
 - multiple Python versions and virtual environments required for package development and collaboration
-- many existing tools like pyenv, pip, pipx, poetry, venv, conda, jupyter/ipynb ...
-- especially for beginners, this can become a waste of time
-  - ...or even scare them away from Python, to Matlab or Julia 😳
+- many existing tools like `pyenv`, `pip`, `pipx`, `hatch`, `pdm`, `poetry`, `rye`, `venv`, `conda`, `jupyter/ipynb` ...
+- especially for beginners, this can become a frustrating waste of time
+  - ...which scares them away from Python, to Matlab 😳
 
 <style>
   footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 35px;
     left: 35px;
     width: calc(100% - 20px);
     text-align: left;
@@ -147,13 +185,15 @@ image: ./resources/python_environment_.png
 
 - 👾 a CLI tool
 - Python version, package, and project manager in one executable
-- based on [rye](https://rye.astral.sh/), now developed by Astral, the creators of the `ruff` Python linter
+- based on [rye](https://rye.astral.sh/), now developed by Astral (VC-backed), the creators of the `ruff` Python linter
 - available for Linux, Mac and Windows
+- open source (MIT & Apache licenses; [on github](https://github.com/astral-sh/uv/))
 
 ---
 
 # Exemplary commands
 <br>
+
 
 ```sh {1|3|5|7|9|11|all}{lines:true,startLine:1}
 uv python install 3.12.7 # install a Python version
@@ -166,7 +206,7 @@ uv lock -U && uv sync # make a lock file and upgrade everythin in the venv
 
 uv pip compile pyproject.toml -o requirements.txt # make requirements file with exact versions
 
-uv run [script-name] # run a script in the project
+uv run [script-name] # run a script or command within the project
 ```
 <br>
 
@@ -185,20 +225,21 @@ uv run [script-name] # run a script in the project
 
 ---
 
-# Conclusion: why use uv?
+# Conclusion: why use `uv`?
 <br>
 
 - simplifies environment setup and management, from Python itself to virtual environments
-- reduces the learning curve associated with multiple tools
+- single tool: reduced learning curve
 - very good docs
 - easily reproduces environments across different systems
   - `requirements.txt` for use with other package managers
-  - Github & Gitlab CI/CD
-  - pre-commit
-  - Docker
+  - Integrations:
+    - Github & Gitlab CI/CD
+    - pre-commit
+    - Docker
 
 
-=> overall pleasant user experience; all-in-one tool, fast dependency resolution and intelligent caching
+⮕ overall pleasant user experience; all-in-one tool, fast dependency resolution and intelligent caching
 
 <style>
   footer {

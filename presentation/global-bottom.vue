@@ -1,5 +1,11 @@
 <template>
-    <footer class="absolute bottom-0 right-0 p-35px">f.obersteiner: uv</footer>
+    <!-- @vue-ignore -->
+    <footer 
+     v-if="$nav.currentPage !== 7" 
+    class="absolute bottom-0 right-0 p-35px"
+    >
+    f.obersteiner: uv
+    </footer>
 </template>
 
 <style>

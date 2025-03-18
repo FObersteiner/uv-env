@@ -110,7 +110,7 @@ lx ./myproject
 
 - make a requirements.txt with exact version specs: `uv pip compile pyproject.toml -o requirements.txt`
 
-    - could also use `setup.py` as source for the requirements
+  - could also use `setup.py` as source for the requirements
 
 - install from requirements file: `uv pip install -r requirements.txt`
 
