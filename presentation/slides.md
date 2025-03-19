@@ -51,7 +51,7 @@ From Samuel & Mietchen, 2024 ([DOI](https://doi.org/10.1093/gigascience/giad113)
 
 <v-clicks>
 
-- PubMed Central ➡ search full text ➡ find Jupyter notebook on github ⮕ try to reproduce results
+- PubMed Central ⮕ search full text ⮕ find Jupyter notebook on github ⮕ try to reproduce results
 - analyzed `n` = 27271 notebooks from 2660 repositories (3467 publications)
 
 </v-clicks>
@@ -75,7 +75,7 @@ From Samuel & Mietchen, 2024 ([DOI](https://doi.org/10.1093/gigascience/giad113)
 
 <style>
   ul li {
-    color: darkgreen; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
+    color: cyan; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
   }
 </style>
 
@@ -161,7 +161,7 @@ image: ./resources/python_environment_.png
 
 <style>
   .highlight {
-    color: darkgreen; /*'lime' in dark-mode, 'darkgreen' in light-mode */
+    color: lime; /*'lime' in dark-mode, 'darkgreen' in light-mode */
     font-style: bold;
     font-size: 1.2em;
   }
