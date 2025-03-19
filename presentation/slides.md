@@ -29,7 +29,10 @@ Florian Obersteiner <f.obersteiner@kit.edu>, DM group, IMKASF
 
 # IMK Python Group
 
-Info...
+- group meetings re-start
+    - more seminar-like with little presentations + discussion
+- MS Teams channel
+- mailing list <asf-python@lists.kit.edu>
 
 ---
 
@@ -42,7 +45,7 @@ Info...
 
 ---
 
-# Motivation `#1`
+# FAIR<sup>2</sup> software
 
 From Samuel & Mietchen, 2024 ([DOI](https://doi.org/10.1093/gigascience/giad113)), <br> "Computational reproducibility of Jupyter notebooks from biomedical publications"
 
@@ -62,25 +65,19 @@ From Samuel & Mietchen, 2024 ([DOI](https://doi.org/10.1093/gigascience/giad113)
 
 <v-clicks>
 
-- `m` = 15817 had requirements file (requirements.txt, setup.py, pipfile etc.) (58% of `n`)
+- `m` = 15817 had requirements file (`requirements.txt`, `setup.py`, pipfile etc.) (58% of `n`)
 - for `k` = 10388 of those, dependencies could be installed (66% of `m`)
 - `l` = 1203 of those ran **without errors** (12% of `k`)
 - 879 of those produced **identical results** as noted within the notebooks;<br>**73% of `l`, 8.5% of `k`, 3.2% of `n`**  
 
 </v-clicks>
 
-<v-click>
-
-<h2 style="font-style: italic;">... FAIR software?</h2>
-
-</v-click>
 
 <style>
   ul li {
-    color: cyan; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
+    color: darkgreen; /* 'cyan' for dark-mode, 'darkgreen' for light mode */
   }
 </style>
-
 
 
 ---
@@ -97,8 +94,7 @@ layout: two-cols
 
 <template v-slot:right>
 
-
-# Some of it.
+# OK, some of it.
 
 </template>
 
@@ -123,7 +119,7 @@ layout: image-right
 image: ./resources/python_environment_.png
 ---
 
-# Motivation `#2`
+# Well, it's Python...
 <br>
 
 - multiple Python versions and virtual environments required for package development and collaboration
@@ -165,7 +161,7 @@ image: ./resources/python_environment_.png
 
 <style>
   .highlight {
-    color: lime; /*'lime' in dark-mode, 'darkgreen' in light-mode */
+    color: darkgreen; /*'lime' in dark-mode, 'darkgreen' in light-mode */
     font-style: bold;
     font-size: 1.2em;
   }
