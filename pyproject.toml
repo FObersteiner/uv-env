@@ -13,9 +13,11 @@ dependencies = [
   "pandas>=2.2.3",
   "polars>=1.18.0",
   "pydantic>=2.10.4",
+  "pydap>=3.5.4",
   "pyfuppes>=0.5.1",
   "ruff>=0.9.6",
   "scipy>=1.14.1",
+  "siphon>=0.10.0",
   "spyder>=6.0.3",
   "toml>=0.10.2",
 ]
