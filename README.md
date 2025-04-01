@@ -266,15 +266,15 @@ Now the dedicated kernel with name <kernel-name> can be selected. This allows e.
 
 #### github actions
 
-<https://docs.astral.sh/uv/guides/integration/github/#pypi>
-
-- overall smooth to switch from poetry in CI
+- docs : <https://docs.astral.sh/uv/guides/integration/github/#pypi>
+- overall smooth switch from poetry to uv in CI
 - bonus: CI runs significantly faster, uv's caching mechanism also works here
 - getting pytest to work was some serious trail and error process
 
 #### gitlab
 
-TODO : <https://docs.astral.sh/uv/guides/integration/gitlab/>
+- docs : <https://docs.astral.sh/uv/guides/integration/gitlab/>
+- successfully tested a simple example, a project which was already managed by uv, install dependencies and run tests. This likely benefitted from the experience I already had with github actions CI.
 
 ## publishing with uv
 
@@ -306,4 +306,3 @@ license-files = []
 
 - uv inside a docker container
 - uv with projects that aren't Python-only
-- CI: gitlab
